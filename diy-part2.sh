@@ -12,3 +12,11 @@
 
 # Modify default IP
 sed -i 's/192.168.1.1/192.168.9.1/g' package/base-files/files/bin/config_generate
+
+# add extra package I want to use
+cd package/lean
+rm -rf k3screenctrl
+git clone https://github.com/lwz322/k3screenctrl.git
+git clone https://github.com/lwz322/k3screenctrl_build.git
+git clone https://github.com/lwz322/luci-app-k3screenctrl.git
+cd ../..
