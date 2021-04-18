@@ -29,7 +29,7 @@ IFS=","
 array=($dirs)
 for i in ${array[@]}
 do
-    cp -rf openwrt-packages/$i package/lean/ && rm -rf openwrt-packages/$i
+    cp -rf openwrt-packages/$i package/lean/
 done
 
 rm -rf openwrt-packages
