@@ -13,6 +13,13 @@
 # Modify default IP
 sed -i 's/192.168.1.1/192.168.9.1/g' package/base-files/files/bin/config_generate
 
+#Update Argon and modify default theme
+rm -rf package/lean/luci-theme-argon
+git clone https://github.com/jerrykuku/luci-theme-argon.git package/lean/luci-theme-argon
+sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
+sed -i 's/Bootstrap/Argon/g' feeds/luci/collections/luci/Makefile
+sed -i '/uci commit luci/i\uci set luci.main.mediaurlbase=/luci-static/argon' package/lean/default-settings/files/zzz-default-settings
+
 # add extra package I want to use
 git clone https://github.com/xiangfeidexiaohuo/openwrt-packages.git
 
@@ -23,7 +30,7 @@ mv openwrt-packages/files/mwan3.po feeds/luci/applications/luci-app-mwan3/po/zh-
 
 rm -rf package/lean/{k3screenctrl,luci-app-syncdial,luci-app-diskman,luci-app-sfe}
 
-dirs="k3screenctrl,k3screenctrl_build,luci-app-k3screenctrl,luci-app-autotimeset,luci-app-poweroff,luci-app-syncdial,luci-app-smartdns,smartdns,luci-app-adguardhome,luci-app-diskman,luci-app-eqos,luci-app-sfe,luci-app-advanced"                                                                                                
+dirs="k3screenctrl,k3screenctrl_build,luci-app-k3screenctrl,luci-app-autotimeset,luci-app-poweroff,luci-app-syncdial,luci-app-smartdns,smartdns,luci-app-adguardhome,luci-app-diskman,luci-app-eqos,luci-app-sfe"                                                                                                
 OLD_IFS="$IFS"
 IFS=","
 array=($dirs)
