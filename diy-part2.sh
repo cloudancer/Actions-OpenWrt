@@ -29,7 +29,7 @@ mv openwrt-packages/files/mwan3.po feeds/luci/applications/luci-app-mwan3/po/zh-
 
 rm -rf package/lean/{k3screenctrl,luci-app-syncdial,luci-app-diskman,luci-app-sfe}
 
-dirs="k3screenctrl,k3screenctrl_build,luci-app-k3screenctrl,luci-app-autotimeset,luci-app-poweroff,luci-app-syncdial,luci-app-smartdns,smartdns,luci-app-adguardhome,luci-app-diskman,luci-app-eqos,luci-app-sfe"                                                                                                
+dirs="k3screenctrl,k3screenctrl_build,luci-app-k3screenctrl,luci-app-autotimeset,luci-app-poweroff,luci-app-syncdial,luci-app-smartdns,smartdns,luci-app-adguardhome,luci-app-eqos,luci-app-sfe"                                                                                                
 OLD_IFS="$IFS"
 IFS=","
 array=($dirs)
