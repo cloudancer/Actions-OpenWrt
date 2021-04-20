@@ -76,7 +76,7 @@ jobs:
       run: |
         chmod +x $DIY_CP_SH
         cd openwrt
-        $$GITHUB_WORKSPACE/$DIY_CP_SH
+        $GITHUB_WORKSPACE/$DIY_CP_SH
 
     - name: Install feeds
       run: cd openwrt && ./scripts/feeds install -a
