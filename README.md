@@ -11,8 +11,8 @@ Build OpenWrt using GitHub Actions
 ## Usage
 
 - Click the [Use this template](https://github.com/P3TERX/Actions-OpenWrt/generate) button to create a new repository.
-- [option] Generate `.config` files using [Lean's OpenWrt](https://github.com/coolsnowwolf/lede) source code. ( You can change it through environment variables in the workflow file. )
-- [option] Push `.config` file to the GitHub repository, or choose "SSH connection to Actions" to true and generate it manuly in tmate terminal.
+- [optional] Generate `.config` files using [Lean's OpenWrt](https://github.com/coolsnowwolf/lede) source code.
+- Push `.config` file to the GitHub repository, or choose "SSH connection to Actions" to true and generate it manually in tmate terminal.
 - Select `Build OpenWrt` on the Actions page.
 - Click the `Run workflow` button.
 - When the build is complete, click the `Artifacts` button in the upper right corner of the Actions page to download the binaries.
