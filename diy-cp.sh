@@ -3,7 +3,7 @@
 # add packages                                                                                                     
 rm -rf package/lean/{k3screenctrl,luci-app-syncdial,luci-theme-argon}
 
-git clone https://github.com/garypang13/luci-app-eqos.git package/lean/luci-app-eqos
+git clone https://github.com/kiss2u/luci-app-eqos.git package/lean/luci-app-eqos
 git clone https://github.com/lwz322/k3screenctrl.git package/lean/k3screenctrl
 git clone https://github.com/lwz322/k3screenctrl_build.git package/lean/k3screenctrl_build
 git clone https://github.com/lwz322/luci-app-k3screenctrl.git package/lean/luci-app-k3screenctrl
