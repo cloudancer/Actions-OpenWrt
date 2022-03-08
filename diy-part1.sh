@@ -21,9 +21,13 @@ git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/lea
 # screen driver
 git clone https://github.com/yangxu52/luci-app-k3screenctrl.git package/lean/luci-app-k3screenctrl
 git clone https://github.com/yangxu52/k3screenctrl_build.git package/lean/k3screenctrl/
+
+# '移除bcm53xx中的其他机型'
+sed -i '421,453d' target/linux/bcm53xx/image/Makefile
+sed -i '140,412d' target/linux/bcm53xx/image/Makefile
 sed -i 's/$(USB3_PACKAGES) k3screenctrl/luci-app-k3screenctrl/g' target/linux/bcm53xx/image/Makefile
 
-echo '替换K3的无线驱动为asus-dhd24'
+# '替换K3的无线驱动为asus-dhd24'
 wget -nv https://github.com/Hill-98/phicommk3-firmware/raw/master/brcmfmac4366c-pcie.bin.asus-dhd24 -O package/lean/k3-brcmfmac4366c-firmware/files/lib/firmware/brcm/brcmfmac4366c-pcie.bin
 #echo '替换K3的无线驱动为ac86u'
 #wget -nv https://github.com/Hill-98/phicommk3-firmware/raw/master/brcmfmac4366c-pcie.bin.ac88u -O package/lean/k3-brcmfmac4366c-firmware/files/lib/firmware/brcm/brcmfmac4366c-pcie.bin
