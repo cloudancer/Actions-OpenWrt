@@ -16,10 +16,6 @@ sed -i 's/192.168.1.1/192.168.9.1/g' package/base-files/files/bin/config_generat
 # Modify hostname
 sed -i "s/hostname='OpenWrt'/hostname='cloudancer'/g" package/base-files/files/bin/config_generate
 
-# Modify default theme
-sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
-sed -i 's/bootstrap/argon/g' feeds/luci/modules/luci-base/root/etc/config/luci
-
 # Modify default ssid
 sed -i 's/OpenWrt/cloudancer/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 
