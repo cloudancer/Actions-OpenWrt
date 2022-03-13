@@ -27,3 +27,6 @@ sed -i 's/none/psk2/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 
 # Add default wifi password
 sed -i '/psk2/a\ \t\t\tset wireless.default_radio${devidx}.key=passw0rD' package/kernel/mac80211/files/lib/wifi/mac80211.sh
+
+# 添加主页的CPU温度显示
+sed -i "/<tr><td width=\"33%\"><%:Load Average%>/a \ \t\t<tr><td width=\"33%\"><%:CPU Temperature%></td><td><%=luci.sys.exec(\"sed 's/../&./g' /sys/class/thermal/thermal_zone0/temp|cut -c1-4\")%></td></tr>" feeds/luci/modules/luci-mod-admin-full/luasrc/view/admin_status/index.htm
